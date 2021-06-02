@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <div class="header">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="vehicle">Unknown</a>
+      </div>
+      <div class="container">
+        <div class="row" style="width: 100%;">
+          <div class="col" style="color: white">
+            <a>Video connexion:</a>
+            <a id="video_state">Connecting...</a></div>
+          <div class="col" style="color: white">
+            <a>State:</a>
+            <a id="state_state">Connecting...</a></div>
+          <div class="col" style="color: white">
+            <a>GPS:</a>
+            <a id="gps_state">Connecting...</a></div>
+          <div class="col" style="color: white">
+            <a>Battery:</a>
+            <a id="battery_state">Connecting...</a></div>
+          <div class="col" style="color: white">
+            <a>Speed:</a>
+            <a id="spd_state">Connecting...</a></div>
+          <div class="col" style="color: white">
+            <a>Throttle:</a>
+            <a id="thr_state">Connecting...</a></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="main-container">
+    <div id="joystick" style="width: 100%;height: 100%;position: absolute"></div>
+    <div id="spinner-container" class="container">
+      <div class="loader"></div>
+      <div class="d-flex justify-content-center align-items-center">
+        <h4>Connecting...</h4>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <h6>Please wait</h6>
+      </div>
+    </div>
+
+    <div id="fail-container" class="container">
+      <div class="d-flex justify-content-center align-items-center">
+        <h4>Connection failed.</h4>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <h6>
+          Sorry!
+          <span style="font-size: 150%;">
+            <b>  :( </b>
+          </span>
+        </h6>
+      </div>
+    </div>
+
+    <div id="video-container" class="container">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <div class="p5 embed-responsive embed-responsive-16by9 position-relative">
+          <video muted id="video" class="embed-responsive-item" autoplay="true" ondblclick="fullscreen(1)" onmouseover="showFullscreenMessage()"></video>
+        </div>
+        <div id="fullscreen-info-1" class="text-center">
+          <h6 >
+            Double tap the video to enter fullscreen mode!
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <div id="mjpeg-container" class="container">
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <div id="mjpeg" class="d-flex justify-content-center align-items-center" ondblclick="fullscreen(2)" onmouseover="showFullscreenMessage()">
+        </div>
+        <div id="fullscreen-info-2" class="text-center">
+          <h6>
+            Double tap the video to enter fullscreen mode!
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="js/vendor/nipplejs.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
